@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+
 import setuptools
 from setuptools import setup
 import versioneer
@@ -17,9 +19,9 @@ requirements = [
     "npctypes",
 ]
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
+test_requirements = []
+if sys.version_info < (3,):
+    test_requirements.append("mock")
 
 
 setup(
