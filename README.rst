@@ -25,7 +25,7 @@ mplview
 A simple, embeddable Matplotlib-based image viewer.
 
 
-* Free software: BSD license
+* Free software: BSD 3-Clause
 * Documentation: https://mplview.readthedocs.io.
 
 
