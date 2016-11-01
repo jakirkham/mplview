@@ -15,3 +15,4 @@ dependencies:
   - pyyaml==3.11
 
   # Requirements
+  - matplotlib==1.5.3
