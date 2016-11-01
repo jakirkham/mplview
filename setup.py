@@ -14,6 +14,7 @@ with open("HISTORY.rst") as history_file:
 
 requirements = [
     "matplotlib",
+    "npctypes",
 ]
 
 test_requirements = [
