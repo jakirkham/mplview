@@ -1,0 +1,14 @@
+name: mplview_env
+
+channels:
+  - conda-forge
+
+dependencies:
+  - pip==8.1.2
+  - wheel==0.29.0
+  - flake8==2.6.2
+  - coverage==3.7.1
+  - python-coveralls=2.5.0
+  - Sphinx==1.4.5
+  - cryptography==1.4
+  - pyyaml==3.11
