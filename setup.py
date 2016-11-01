@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+
 import setuptools
 from setuptools import setup
 import versioneer
@@ -13,12 +15,13 @@ with open("HISTORY.rst") as history_file:
     history = history_file.read()
 
 requirements = [
-    # TODO: put package requirements here
+    "matplotlib",
+    "npctypes",
 ]
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
+test_requirements = []
+if sys.version_info < (3,):
+    test_requirements.append("mock")
 
 
 setup(
