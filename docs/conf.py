@@ -61,7 +61,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'mplview'
-copyright = u"2016, John Kirkham"
+copyright = u"2016-2017, John Kirkham"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
