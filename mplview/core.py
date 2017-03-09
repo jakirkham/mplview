@@ -140,8 +140,13 @@ class MatplotlibViewer(matplotlib.figure.Figure):
                 vmax         the max value selected
         """
         if vmin != vmax:
-            self.svmin = (self.svmax - self.svmin) * vmin + self.svmin
-            self.svmax = (self.svmax - self.svmin) * vmax + self.svmin
+            svdiff = self.svmax - self.svmin
+
+            svmin = svdiff * vmin + self.svmin
+            svmax = svdiff * vmax + self.svmin
+
+            self.svmin = svmin
+            self.svmax = svmax
         else:
             self.svmin = self.vmin
             self.svmax = self.vmax
