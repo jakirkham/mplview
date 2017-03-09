@@ -15,6 +15,8 @@ exclude_lines =
 omit =
     */python?.?/*
     */site-packages/*
+    */eggs/*
+    */.eggs/*
     *tests/*
     */travis_pypi_setup.py
     */versioneer.py
