@@ -5,13 +5,19 @@ mplview
 
 .. image:: https://img.shields.io/pypi/v/mplview.svg
         :target: https://pypi.python.org/pypi/mplview
+        :alt: PyPI
 
-.. image:: https://img.shields.io/travis/jakirkham/mplview.svg
+.. image:: https://anaconda.org/conda-forge/mplview/badges/version.svg
+        :target: https://anaconda.org/conda-forge/mplview
+        :alt: conda-forge
+
+.. image:: https://img.shields.io/travis/jakirkham/mplview/master.svg
         :target: https://travis-ci.org/jakirkham/mplview
+        :alt: Travis CI
 
 .. image:: https://readthedocs.org/projects/mplview/badge/?version=latest
         :target: https://mplview.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
+        :alt: Read the Docs
 
 .. image:: https://coveralls.io/repos/github/jakirkham/mplview/badge.svg
         :target: https://coveralls.io/github/jakirkham/mplview
