@@ -4,15 +4,10 @@ channels:
   - conda-forge
 
 dependencies:
-  # General dependencies
-  - pip==8.1.2
+  - pip==9.0.1
   - wheel==0.29.0
-  - flake8==2.6.2
   - coverage==3.7.1
-  - python-coveralls=2.5.0
-  - Sphinx==1.4.5
-  - cryptography==1.4
-  - pyyaml==3.11
+  - python-coveralls==2.5.0
 
   # Requirements
   - matplotlib==1.5.3
