@@ -7,7 +7,7 @@ mplview
         :target: https://pypi.python.org/pypi/mplview
         :alt: PyPI
 
-.. image:: https://anaconda.org/conda-forge/mplview/badges/version.svg
+.. image:: https://anaconda.org/conda-forge/mplview/badges/version.svg?bust=1
         :target: https://anaconda.org/conda-forge/mplview
         :alt: conda-forge
 
@@ -19,7 +19,7 @@ mplview
         :target: https://mplview.readthedocs.io/en/latest/?badge=latest
         :alt: Read the Docs
 
-.. image:: https://coveralls.io/repos/github/jakirkham/mplview/badge.svg
+.. image:: https://coveralls.io/repos/github/jakirkham/mplview/badge.svg?bust=1
         :target: https://coveralls.io/github/jakirkham/mplview
         :alt: Coveralls
 
