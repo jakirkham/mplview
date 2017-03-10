@@ -12,4 +12,3 @@ dependencies:
   # Requirements
   - matplotlib==1.5.3
   - npctypes==0.0.2
-  - mock==2.0.0
