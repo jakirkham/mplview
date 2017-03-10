@@ -85,6 +85,9 @@ class TestMatplotlibViewer(unittest.TestCase):
         exp_str = 'x=4.0000, y=5.0000'
         self.assertEqual(exp_str, self.mplv.format_coord(4.0, 5.0))
 
+        exp_str = 'x=-1.0000, y=-1.0000'
+        self.assertEqual(exp_str, self.mplv.format_coord(-1.0, -1.0))
+
     def test_image_color_range(self):
         img = numpy.linspace(0, 1, 12).reshape(3,4)
         self.mplv.set_images(img, vmin=0.0, vmax=1.0)
