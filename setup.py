@@ -20,8 +20,6 @@ requirements = [
 ]
 
 test_requirements = []
-if sys.version_info < (3,):
-    test_requirements.append("mock")
 
 
 setup(
