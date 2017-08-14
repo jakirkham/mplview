@@ -67,9 +67,9 @@ class MatplotlibViewer(matplotlib.figure.Figure):
 
         type_info = tinfo(new_neuron_images.dtype)
         if self.vmin is None:
-           self.vmin = type_info.min
+            self.vmin = type_info.min
         if self.vmax is None:
-           self.vmax = type_info.max
+            self.vmax = type_info.max
 
         self.svmin = self.vmin
         self.svmax = self.vmax
