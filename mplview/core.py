@@ -2,15 +2,15 @@ __author__ = "John Kirkham <kirkhamj@janelia.hhmi.org>"
 __date__ = "$Nov 01, 2016 9:19$"
 
 
-import numpy as np
+import numpy
 
-import matplotlib as mpl
+import matplotlib
 import matplotlib.figure
 import matplotlib.colors
+import matplotlib.widgets
 
-from matplotlib.widgets import Slider, Button, SpanSelector
-
-from npctypes.types import tinfo
+import npctypes
+import npctypes.types
 
 
 class MatplotlibViewer(matplotlib.figure.Figure):
@@ -44,7 +44,7 @@ class MatplotlibViewer(matplotlib.figure.Figure):
 
     def set_images(self,
                    new_neuron_images,
-                   cmap=mpl.cm.Greys_r,
+                   cmap=matplotlib.cm.Greys_r,
                    use_matshow=False,
                    vmin=None,
                    vmax=None):
@@ -67,7 +67,7 @@ class MatplotlibViewer(matplotlib.figure.Figure):
         self.vmin = vmin
         self.vmax = vmax
 
-        type_info = tinfo(new_neuron_images.dtype)
+        type_info = npctypes.types.tinfo(new_neuron_images.dtype)
         if self.vmin is None:
             self.vmin = type_info.min
         if self.vmax is None:
@@ -92,7 +92,7 @@ class MatplotlibViewer(matplotlib.figure.Figure):
         self.image_view_colorbar = self.colorbar(
             self.image_view, ax=self.viewer)
 
-        self.image_view_colorbar_selector = SpanSelector(
+        self.image_view_colorbar_selector = matplotlib.widgets.SpanSelector(
             self.image_view_colorbar.ax,
             self.color_range_update, 'vertical',
             useblit=True,
@@ -129,7 +129,7 @@ class MatplotlibViewer(matplotlib.figure.Figure):
 
         cur_img = cur_img.astype(float)
 
-        cur_img = np.asarray(cur_img)
+        cur_img = numpy.asarray(cur_img)
 
         return(cur_img)
 
@@ -227,7 +227,7 @@ class SequenceNavigator(object):
 
         self.axtime = fig.add_axes(
             [0.25, 0.1, 0.65, 0.03], axisbg=self.axcolor)
-        self.stime = Slider(
+        self.stime = matplotlib.widgets.Slider(
             self.axtime,
             'Time',
             self.min_time,
@@ -239,7 +239,7 @@ class SequenceNavigator(object):
         self.stime.on_changed(self.time_update)
 
         self.beginax = fig.add_axes([0.2, 0.025, 0.1, 0.04])
-        self.begin_button = Button(
+        self.begin_button = matplotlib.widgets.Button(
             self.beginax,
             'Begin',
             color=self.axcolor,
@@ -248,19 +248,19 @@ class SequenceNavigator(object):
         self.begin_button.on_clicked(self.begin_time)
 
         self.prevax = fig.add_axes([0.3, 0.025, 0.1, 0.04])
-        self.prev_button = Button(
+        self.prev_button = matplotlib.widgets.Button(
             self.prevax, 'Prev', color=self.axcolor, hovercolor=self.hovercolor
         )
         self.prev_button.on_clicked(self.prev_time)
 
         self.nextax = fig.add_axes([0.7, 0.025, 0.1, 0.04])
-        self.next_button = Button(
+        self.next_button = matplotlib.widgets.Button(
             self.nextax, 'Next', color=self.axcolor, hovercolor=self.hovercolor
         )
         self.next_button.on_clicked(self.next_time)
 
         self.endax = fig.add_axes([0.8, 0.025, 0.1, 0.04])
-        self.end_button = Button(
+        self.end_button = matplotlib.widgets.Button(
             self.endax, 'End', color=self.axcolor, hovercolor=self.hovercolor
         )
         self.end_button.on_clicked(self.end_time)
