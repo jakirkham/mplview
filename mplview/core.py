@@ -2,6 +2,8 @@ __author__ = "John Kirkham <kirkhamj@janelia.hhmi.org>"
 __date__ = "$Nov 01, 2016 9:19$"
 
 
+import numpy as np
+
 import matplotlib as mpl
 import matplotlib.figure
 import matplotlib.colors
@@ -126,6 +128,8 @@ class MatplotlibViewer(matplotlib.figure.Figure):
         cur_img = cur_img[...]
 
         cur_img = cur_img.astype(float)
+
+        cur_img = np.asarray(cur_img)
 
         return(cur_img)
 
