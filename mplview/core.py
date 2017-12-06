@@ -126,7 +126,6 @@ class MatplotlibViewer(matplotlib.figure.Figure):
             cur_img = cur_img[...]
 
         cur_img = numpy.asarray(cur_img[...])
-
         cur_img = cur_img.astype(float)
 
         return(cur_img)
