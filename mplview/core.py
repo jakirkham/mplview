@@ -118,9 +118,11 @@ class MatplotlibViewer(matplotlib.figure.Figure):
                 numpy.ndarray:      the current image.
         """
 
-        cur_img = self.neuron_images
         if (len(self.neuron_images.shape) == 3):
             i = self.time_nav.stime.val if i is None else i
+
+        cur_img = self.neuron_images
+        if (len(self.neuron_images.shape) == 3):
             cur_img = cur_img[i]
         else:
             cur_img = cur_img[...]
