@@ -125,11 +125,9 @@ class MatplotlibViewer(matplotlib.figure.Figure):
         else:
             cur_img = cur_img[...]
 
-        cur_img = cur_img[...]
+        cur_img = numpy.asarray(cur_img[...])
 
         cur_img = cur_img.astype(float)
-
-        cur_img = numpy.asarray(cur_img)
 
         return(cur_img)
 
