@@ -120,6 +120,8 @@ class MatplotlibViewer(matplotlib.figure.Figure):
 
         if (len(self.neuron_images.shape) == 3):
             i = self.time_nav.stime.val if i is None else i
+        else:
+            i = 0
 
         cur_img = self.neuron_images
         if (len(self.neuron_images.shape) == 3):
