@@ -190,7 +190,7 @@ class MatplotlibViewer(matplotlib.figure.Figure):
             z = self.get_image()[yi, xi]
 
             return 'x=%1.4f, y=%1.4f, z=%1.4f'%(x, y, z)
-        except:
+        except Exception:
             return 'x=%1.4f, y=%1.4f'%(x, y)
 
 
