@@ -52,6 +52,28 @@ class TestMatplotlibViewer(unittest.TestCase):
         cur_img = self.mplv.get_image(-1)
         self.assertTrue(numpy.array_equal(img[-1], cur_img))
 
+    def test_image_stack_retry(self):
+        img = numpy.arange(60.0).reshape(5,3,4)
+        self.mplv.set_images(img)
+
+        cur_img = self.mplv.get_image()
+        self.assertTrue(numpy.array_equal(img[0], cur_img))
+
+        cur_img = self.mplv.get_image()
+        self.assertTrue(numpy.array_equal(img[0], cur_img))
+
+        cur_img = self.mplv.get_image(2)
+        self.assertTrue(numpy.array_equal(img[2], cur_img))
+
+        cur_img = self.mplv.get_image(2)
+        self.assertTrue(numpy.array_equal(img[2], cur_img))
+
+        cur_img = self.mplv.get_image(-1)
+        self.assertTrue(numpy.array_equal(img[-1], cur_img))
+
+        cur_img = self.mplv.get_image(-1)
+        self.assertTrue(numpy.array_equal(img[-1], cur_img))
+
     def test_init_too_big(self):
         img = numpy.arange(60.0).reshape(1,5,3,4)
         with self.assertRaises(ValueError) as e:
