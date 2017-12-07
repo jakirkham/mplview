@@ -2,6 +2,8 @@ __author__ = "John Kirkham <kirkhamj@janelia.hhmi.org>"
 __date__ = "$Nov 01, 2016 9:19$"
 
 
+import distutils
+
 import numpy
 
 import matplotlib
@@ -234,8 +236,15 @@ class SequenceNavigator(object):
 
         self.next_cid = 0
 
+        mpl_ver = distutils.version.LooseVersion(matplotlib.__version__)
+        mpl_2_ver = distutils.version.LooseVersion("2")
+
+        fig_axes_kwargs = {}
+        axcolor_name = "facecolor" if mpl_ver >= mpl_2_ver else "axisbg"
+        fig_axes_kwargs[axcolor_name] = self.axcolor
+
         self.axtime = fig.add_axes(
-            [0.25, 0.1, 0.65, 0.03], facecolor=self.axcolor
+            [0.25, 0.1, 0.65, 0.03], **fig_axes_kwargs
         )
         self.stime = matplotlib.widgets.Slider(
             self.axtime,
