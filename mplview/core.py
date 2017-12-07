@@ -235,7 +235,7 @@ class SequenceNavigator(object):
         self.next_cid = 0
 
         self.axtime = fig.add_axes(
-            [0.25, 0.1, 0.65, 0.03], axisbg=self.axcolor
+            [0.25, 0.1, 0.65, 0.03], facecolor=self.axcolor
         )
         self.stime = matplotlib.widgets.Slider(
             self.axtime,
