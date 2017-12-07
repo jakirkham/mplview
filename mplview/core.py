@@ -92,7 +92,8 @@ class MatplotlibViewer(matplotlib.figure.Figure):
         )
 
         self.image_view_colorbar = self.colorbar(
-            self.image_view, ax=self.viewer)
+            self.image_view, ax=self.viewer
+        )
 
         self.image_view_colorbar_selector = matplotlib.widgets.SpanSelector(
             self.image_view_colorbar.ax,
