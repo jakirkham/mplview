@@ -63,6 +63,8 @@ class MatplotlibViewer(matplotlib.figure.Figure):
             )
 
         self.neuron_images = new_neuron_images
+        self._cur_img_time = None
+        self._cur_img = None
         self.cmap = cmap
         self.vmin = vmin
         self.vmax = vmax
@@ -118,20 +120,26 @@ class MatplotlibViewer(matplotlib.figure.Figure):
                 numpy.ndarray:      the current image.
         """
 
-        cur_img = self.neuron_images
         if (len(self.neuron_images.shape) == 3):
             i = self.time_nav.stime.val if i is None else i
-            cur_img = cur_img[i]
         else:
-            cur_img = cur_img[...]
+            i = 0
 
-        cur_img = cur_img[...]
+        if i != self._cur_img_time:
+            cur_image = self._cur_img
 
-        cur_img = cur_img.astype(float)
+            if (len(self.neuron_images.shape) == 3):
+                cur_img = self.neuron_images[i]
+            else:
+                cur_img = self.neuron_images[...]
 
-        cur_img = numpy.asarray(cur_img)
+            cur_img = numpy.asarray(cur_img[...])
+            cur_img = cur_img.astype(float)
 
-        return(cur_img)
+            self._cur_img_time = i
+            self._cur_img = cur_img
+
+        return(self._cur_img)
 
 
     def color_range_update(self, vmin, vmax):
