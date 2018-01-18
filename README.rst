@@ -7,7 +7,7 @@ mplview
         :target: https://pypi.python.org/pypi/mplview
         :alt: PyPI
 
-.. image:: https://anaconda.org/conda-forge/mplview/badges/version.svg
+.. image:: https://img.shields.io/conda/vn/conda-forge/mplview.svg
         :target: https://anaconda.org/conda-forge/mplview
         :alt: conda-forge
 
