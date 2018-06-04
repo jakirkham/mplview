@@ -35,10 +35,38 @@ A simple, embeddable Matplotlib-based image viewer.
 * Documentation: https://mplview.readthedocs.io.
 
 
-Features
---------
+Example
+-------
 
-* TODO
+Typically ``mplview`` is used within the context of the Jupyter Notebook.
+Though it can also be used with any interactive GUI backend that ``matplotlib``
+provides. Below is a brief example of how this works in the Jupyter Notebook
+with some dummy data. Similar usage can be applied to other contexts.
+
+.. code:: python
+
+    # Run the following in your Notebook
+    #
+    # %matplotlib notebook
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from mplview.core import MatplotlibViewer
+
+    arr = np.random.random((25, 30, 35))
+
+    mplsv = plt.figure(FigureClass=MatplotlibViewer)
+    mplsv.set_images(
+        arr,
+        vmin=0.0,
+        vmax=1.0
+    )
+
+The array provided to set the images must provide a reasonable subset of the
+NumPy array interface (primarily slicing and coercion to NumPy Arrays). This
+allows other array types to be used for visualization easily (e.g. Dask
+Arrays).
+
 
 Credits
 ---------
@@ -47,4 +75,3 @@ This package was created with Cookiecutter_ and the `nanshe-org/nanshe-cookiecut
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`nanshe-org/nanshe-cookiecutter`: https://github.com/nanshe-org/nanshe-cookiecutter
-
